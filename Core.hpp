@@ -17,7 +17,6 @@ class Katalog
 private:
 
 	list <unique_ptr<Pojazd>> pojazdy;
-	//list <unique_ptr<Pojazd>>::iterator it=pojazdy.begin();
 	int n_pojazdow=0;
 
 
@@ -25,7 +24,7 @@ public:
 
 	Katalog()
 	{
-		pojazdy.push_back(make_unique<Osobowy>(4, "audi", "a4", "Przemek", "Bus", 2003));
+		pojazdy.push_back(make_unique<Osobowy>(4, "Audi", "A4", "Przemek", "Bus", 2003));
 		n_pojazdow++ ;
 	}
 
@@ -61,7 +60,7 @@ public:
 
 	void zapisz()
 	{
-		fstream myfile("C:/Users/przem/Desktop/dupa.txt");
+		fstream myfile("C:/Users/przem/Desktop/zapis.txt");
 
 		for (auto& Pojazd : pojazdy)
 		{
@@ -76,7 +75,7 @@ public:
 		string arr[15];
 		int i = 0;
 		fstream myfile;
-		myfile.open("C:/Users/przem/Desktop/dupa.txt");
+		myfile.open("C:/Users/przem/Desktop/zapis.txt");
 		if (myfile.is_open())
 		{
 			while (getline(myfile, line))
@@ -105,8 +104,6 @@ public:
 				}
 				else cout << "Blad wczytywania" << endl;
 
-
-				//cout << arr[];
 				i = 0;
 			}
 			myfile.close();
