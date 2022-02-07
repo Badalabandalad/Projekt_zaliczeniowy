@@ -5,6 +5,7 @@
 
 using namespace std;
 
+//Klasa Bazowa-pojazd
 class Pojazd
 {
 
@@ -63,6 +64,7 @@ public:
 
 };
 
+//Klasa Pochodna-Osobowy
 class Osobowy : public Pojazd
 {
 private:
@@ -96,7 +98,7 @@ public:
 
 };
 
-
+//Klasa Pochodna-Motocykl
 class Motocykl :public Pojazd
 {
 
@@ -128,8 +130,6 @@ public:
 
 		if(get_kosz() == true) return( "Motocykl " + get_marka() + " " + get_model() + " z roku " + to_string(get_rok_produkcji()) + " z koszem Wlasciciel: " + get_imie() + " " + get_nazwisko());
 		else                   return( "Motocykl " + get_marka() + " " + get_model() + " z roku " + to_string(get_rok_produkcji()) + " bez kosza Wlasciciel: " + get_imie() + " " + get_nazwisko());
-
-		//return ("Motocykl " + get_marka() + " " + get_model() + " z roku " + to_string(get_rok_produkcji()) + " z liczba miejsc " );
 
 	}
 

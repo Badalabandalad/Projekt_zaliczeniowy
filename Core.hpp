@@ -49,6 +49,7 @@ public:
 		pojazdy.push_back(move(p));
 	}
 
+	//usuwanie wiersza
 	void delate(int i)
 	{
 		list <unique_ptr<Pojazd>>::iterator it = pojazdy.begin();
@@ -57,7 +58,7 @@ public:
 		n_pojazdow--;
 	}
 
-
+	//zapis do pliku
 	void zapisz()
 	{
 		fstream myfile("C:/Users/przem/Desktop/zapis.txt");
@@ -69,6 +70,7 @@ public:
 		myfile.close();
 	}
 
+	//metoda wczytywania z pliku
 	void wczytaj()
 	{
 		string line;

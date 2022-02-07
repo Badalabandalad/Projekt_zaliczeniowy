@@ -17,7 +17,7 @@ public:
 	{
 		stan=true;
 	}
-
+	//Mozliwe dzialania uzytkownika
 	void akcja()
 	{
 		string wejscie, wejscie2;
@@ -154,6 +154,7 @@ public:
 
 	}
 
+	//Wychodzenie z programu
 	void end()
 	{
 		string pom;
@@ -164,14 +165,16 @@ public:
 
 	}
 
+
 	bool get_stan()
 	{
 		return stan;
 	}
 
+	//Ekran startowy
 	void initialize()
 	{
-		cout << "Symulator przedsiebiorstwa na projekt polowkowy" << endl;
+		cout << "Baza danych pojazdow na projekt zaliczeniowy" << endl;
 		cout << "\n";
 		cout << "Press any key to continue..." << endl;
 		_getch();
