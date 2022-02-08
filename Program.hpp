@@ -72,7 +72,14 @@ public:
 					cin >> rok;
 					cout << "Podaj liczbe miejsc siedzacych" << endl;
 					cin >> liczba;
-					katalog.dodaj_pojazd(make_unique<Osobowy>(liczba, marka, model, imie, nazwisko, rok));
+					try
+					{
+						katalog.dodaj_pojazd(make_unique<Osobowy>(liczba, marka, model, imie, nazwisko, rok));
+					}
+					catch (int e)
+					{
+						cout << "Nie moze byc 0 miejsc!" << endl;
+					}
 				}
 				else if (wejscie2 == "mot")
 				{

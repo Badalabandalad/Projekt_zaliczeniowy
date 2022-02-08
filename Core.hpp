@@ -2,7 +2,6 @@
 #include <vector>
 #include <list>
 #include <conio.h>
-#include <algorithm>
 #include <iterator>
 #include <exception>
 #include <fstream>
@@ -11,6 +10,7 @@
 #include "klasy.hpp"
 
 using namespace std;
+
 
 class Katalog
 {
@@ -40,7 +40,7 @@ public:
 
 	int get_ilosc_pojazdow()
 	{
-		return n_pojazdow;
+		return pojazdy.size();
 	}
 
 	void dodaj_pojazd(unique_ptr<Pojazd> p)

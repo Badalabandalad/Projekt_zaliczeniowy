@@ -5,6 +5,7 @@
 
 using namespace std;
 
+
 //Klasa Bazowa-pojazd
 class Pojazd
 {
@@ -50,17 +51,9 @@ public:
 		return nazwisko_wlasciciela;
 	}
 
-	virtual void print()
-	{
-		cout << "dupa" << endl;
-	}
+	virtual void print() = 0;
 
-	virtual string zapis()
-	{
-
-		return 0;
-
-	}
+	virtual string zapis() = 0;
 
 };
 
@@ -74,6 +67,11 @@ public:
 
 	Osobowy(int liczba, string markapom, string modelpom, string imie, string nazwisko, int rok) : Pojazd(markapom, modelpom, imie, nazwisko, rok)
 	{
+		if (liczba <= 0)
+		{
+			throw - 1;
+		}
+
 		liczba_miesc = liczba;
 	}
 
@@ -84,12 +82,12 @@ public:
 	}
 
 
-	virtual void print() override 
+	virtual void print() 
 	{
 		cout << "Samochod osobowy " << get_marka() << " " << get_model() << " z roku " << get_rok_produkcji() << " z liczba miejsc " <<  get_liczba_miejsc() << " Wlasciciel: " << get_imie() << " " << get_nazwisko() << endl;
 	}
 
-	string zapis() override
+	string zapis() 
 	{
 
 		return ("Samochod osobowy " + get_marka() + " " + get_model() + " z roku " + to_string( get_rok_produkcji()) + " z liczba miejsc " + to_string( get_liczba_miejsc()) + " Wlasciciel: " + get_imie() + " " + get_nazwisko());
@@ -125,7 +123,7 @@ public:
 	}
 
 
-	string zapis() override
+	string zapis()
 	{
 
 		if(get_kosz() == true) return( "Motocykl " + get_marka() + " " + get_model() + " z roku " + to_string(get_rok_produkcji()) + " z koszem Wlasciciel: " + get_imie() + " " + get_nazwisko());
